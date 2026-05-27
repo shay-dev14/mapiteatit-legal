@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — MapItEatIt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --orange:       #F97316;
+      --orange-dark:  #EA580C;
+      --orange-pale:  #FFF6EF;
+      --orange-muted: #FDDBC2;
+      --text:         #1C1008;
+      --text-soft:    #6B4226;
+      --border:       #F2D9C8;
+      --white:        #FFFFFF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      background: var(--orange-pale);
+      color: var(--text);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      height: 64px;
+    }
+
+    .logo-pin {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    .logo-wordmark {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--orange-dark);
+      letter-spacing: -0.01em;
+    }
+
+    /* ── Hero band ── */
+    .hero {
+      background: linear-gradient(135deg, var(--orange-dark) 0%, var(--orange) 100%);
+      color: var(--white);
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero p {
+      font-size: 0.95rem;
+      opacity: 0.88;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .effective-badge {
+      display: inline-block;
+      margin-top: 1.25rem;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 100px;
+      padding: 0.3rem 1rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.03em;
+      font-weight: 500;
+    }
+
+    /* ── Main content ── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* Summary cards */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .summary-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.25rem 1.25rem 1rem;
+    }
+
+    .summary-card .icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .summary-card strong {
+      display: block;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .summary-card p {
+      font-size: 0.82rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.45rem;
+      color: var(--orange-dark);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: -0.015em;
+    }
+
+    p {
+      margin-bottom: 0.85rem;
+      font-size: 0.95rem;
+    }
+
+    ul, ol {
+      padding-left: 1.4rem;
+      margin-bottom: 0.85rem;
+    }
+
+    li {
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+
+    /* Inline highlight */
+    .tag {
+      display: inline-block;
+      background: var(--orange-muted);
+      color: var(--orange-dark);
+      border-radius: 6px;
+      padding: 0.05rem 0.45rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    /* Info box */
+    .info-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--orange);
+      border-radius: 0 12px 12px 0;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    /* Contact card */
+    .contact-card {
+      background: linear-gradient(135deg, var(--orange-dark) 0%, var(--orange) 100%);
+      border-radius: 20px;
+      padding: 2rem;
+      color: var(--white);
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .contact-card h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      color: var(--white);
+      border: none;
+      padding: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-card p {
+      opacity: 0.88;
+      font-size: 0.92rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-card a {
+      display: inline-block;
+      background: var(--white);
+      color: var(--orange-dark);
+      font-weight: 500;
+      text-decoration: none;
+      padding: 0.6rem 1.5rem;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      transition: opacity 0.15s;
+    }
+
+    .contact-card a:hover { opacity: 0.88; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      border-top: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    @media (max-width: 520px) {
+      .hero { padding: 2.5rem 1.25rem 2rem; }
+      main  { padding: 2rem 1.25rem 4rem; }
+      .summary-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <svg class="logo-pin" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 2C10.477 2 6 6.477 6 12c0 7.5 10 18 10 18s10-10.5 10-18c0-5.523-4.477-10-10-10z" fill="#F97316"/>
+      <circle cx="16" cy="12" r="4" fill="white"/>
+      <!-- fork tines -->
+      <line x1="14" y1="7" x2="14" y2="10" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="16" y1="7" x2="16" y2="10" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="18" y1="7" x2="18" y2="10" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="16" y1="10" x2="16" y2="14" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+    <span class="logo-wordmark">MapItEatIt</span>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <h1>Privacy Policy</h1>
+  <p>We keep it simple: you control your data, we only collect what the app genuinely needs.</p>
+  <span class="effective-badge">Effective: 27 May 2025</span>
+</div>
+
+<!-- Main -->
+<main>
+
+  <!-- At-a-glance cards -->
+  <div class="summary-grid">
+    <div class="summary-card">
+      <span class="icon">📍</span>
+      <strong>Location</strong>
+      <p>Used on-device to show nearby restaurants. Never stored on our servers.</p>
+    </div>
+    <div class="summary-card">
+      <span class="icon">🔐</span>
+      <strong>Sign-in</strong>
+      <p>Google Sign-In only. We store your name and email in Firebase.</p>
+    </div>
+    <div class="summary-card">
+      <span class="icon">🤖</span>
+      <strong>AI Processing</strong>
+      <p>Shared content is sent to Google Gemini to extract venue details.</p>
+    </div>
+    <div class="summary-card">
+      <span class="icon">🚫</span>
+      <strong>No Ads, No Sale</strong>
+      <p>Your data is never sold or used for advertising purposes.</p>
+    </div>
+  </div>
+
+  <!-- 1. Overview -->
+  <section>
+    <h2>1. Overview</h2>
+    <p>MapItEatIt ("the App", "we", "us") is a food discovery app that helps you save, organise, and revisit restaurants discovered on social media. This Privacy Policy explains what data we collect, why we collect it, and how it's stored.</p>
+    <p>By using MapItEatIt, you agree to the practices described in this policy. If you do not agree, please do not use the App.</p>
+  </section>
+
+  <!-- 2. Information we collect -->
+  <section>
+    <h2>2. Information We Collect</h2>
+
+    <p><strong>Account information</strong><br>
+    When you sign in with Google, we receive your name, email address, and profile photo via Google Sign-In. This information is stored in Firebase Authentication and Firestore to identify your account and associate saved places with you.</p>
+
+    <p><strong>Saved places and collections</strong><br>
+    Restaurant names, addresses, Google Place IDs, cuisine tags, your visit ratings, notes, and collection membership are stored in Firebase Firestore under your user account.</p>
+
+    <p><strong>Shared content</strong><br>
+    When you share an Instagram Reel, TikTok video, or screenshot to MapItEatIt via the iOS Share Extension, the URL or image is sent to our <span class="tag">analyzeCapture</span> / <span class="tag">analyzeVideo</span> Cloud Functions. These functions use Google Gemini to extract venue information. Shared content is processed transiently and is not permanently stored on our servers beyond what's saved to your Firestore collections.</p>
+
+    <p><strong>Location data</strong><br>
+    With your permission, the App accesses your device location to centre the map, display nearby restaurants, and calculate travel times. Location data is processed on-device and via the Google Routes API for travel time estimates. We do not store a history of your location on our servers.</p>
+
+    <p><strong>Push notification tokens</strong><br>
+    If you grant notification permissions, a Firebase Cloud Messaging (FCM) token is stored in Firestore to deliver proximity alerts and other in-app notifications.</p>
+  </section>
+
+  <!-- 3. How we use your information -->
+  <section>
+    <h2>3. How We Use Your Information</h2>
+    <ul>
+      <li>To authenticate you and sync your saved places across devices.</li>
+      <li>To process shared social media content and extract restaurant details using AI.</li>
+      <li>To display your saved restaurants on the map and in lists.</li>
+      <li>To calculate walking, transit, and driving times to nearby venues.</li>
+      <li>To send proximity alerts when you are near a saved restaurant (if enabled).</li>
+      <li>To power the AI craving search feature (<span class="tag">matchCraving</span>).</li>
+    </ul>
+    <p>We do not use your data for advertising, profiling, or any purpose not listed above.</p>
+  </section>
+
+  <!-- 4. Third-party services -->
+  <section>
+    <h2>4. Third-Party Services</h2>
+    <p>MapItEatIt relies on the following third-party services, each with their own privacy policies:</p>
+    <ul>
+      <li><strong>Google Firebase</strong> — authentication, database (Firestore), cloud functions, and push notifications. <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy</a></li>
+      <li><strong>Google Gemini API</strong> — AI processing of shared content and craving matching. <a href="https://ai.google.dev/terms" target="_blank" rel="noopener">Gemini Terms</a></li>
+      <li><strong>Google Places API</strong> — venue lookup, autocomplete, and place details. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+      <li><strong>Google Routes API</strong> — travel time calculations. Covered by Google Privacy Policy above.</li>
+      <li><strong>Google Sign-In</strong> — account authentication. Covered by Google Privacy Policy above.</li>
+    </ul>
+    <div class="info-box">
+      MapItEatIt does not integrate with Instagram, TikTok, or any delivery app directly. It only processes publicly accessible URLs that you choose to share into the app.
+    </div>
+  </section>
+
+  <!-- 5. Data storage & security -->
+  <section>
+    <h2>5. Data Storage &amp; Security</h2>
+    <p>All user data is stored in Google Firebase infrastructure (Firestore), protected by Firebase Security Rules that restrict read/write access to the authenticated owner of each record. Data is encrypted in transit (TLS) and at rest by Firebase.</p>
+    <p>We do not operate our own database servers. Cloud Functions run in Google Cloud (region: <span class="tag">us-central1</span>) and do not retain logs of the content you share beyond standard Google Cloud logging.</p>
+  </section>
+
+  <!-- 6. Data retention & deletion -->
+  <section>
+    <h2>6. Data Retention &amp; Deletion</h2>
+    <p>Your data is retained for as long as you have an active account. You may request deletion of your account and all associated data at any time by emailing us (see contact section below). Upon a deletion request, we will remove your Firestore data and Firebase Auth account within 30 days.</p>
+    <p>Note: if you delete the app without contacting us, your data will remain in Firestore until you submit a deletion request.</p>
+  </section>
+
+  <!-- 7. Children -->
+  <section>
+    <h2>7. Children's Privacy</h2>
+    <p>MapItEatIt is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us and we will delete it promptly.</p>
+  </section>
+
+  <!-- 8. Your rights -->
+  <section>
+    <h2>8. Your Rights</h2>
+    <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+    <ul>
+      <li><strong>Access</strong> — request a copy of the data we hold about you.</li>
+      <li><strong>Correction</strong> — request correction of inaccurate data.</li>
+      <li><strong>Deletion</strong> — request deletion of your account and data.</li>
+      <li><strong>Portability</strong> — request your data in a machine-readable format.</li>
+      <li><strong>Objection</strong> — object to processing of your data.</li>
+    </ul>
+    <p>To exercise any of these rights, please contact us using the email below. We will respond within 30 days.</p>
+  </section>
+
+  <!-- 9. Changes -->
+  <section>
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will revise the "Effective" date at the top of the page. Continued use of the App after changes constitutes your acceptance of the updated policy. For significant changes, we will notify you via the App.</p>
+  </section>
+
+  <!-- Contact -->
+  <div class="contact-card">
+    <h2>Questions?</h2>
+    <p>If you have any questions about this Privacy Policy or how we handle your data, get in touch.</p>
+    <a href="mailto:privacy@mapiteatit.com">privacy@mapiteatit.com</a>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2025 MapItEatIt. All rights reserved.
+</footer>
+
+</body>
+</html>
