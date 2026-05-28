@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "LL7QSZF8RN.com.example.eatsMap",
+        "paths": ["/save", "/save/*"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MapItEatIt — Save this restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "DM Sans", sans-serif; background: #FFF6EF; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; }
+    .card { background: white; border-radius: 24px; padding: 32px 24px; max-width: 400px; width: 100%; box-shadow: 0 8px 32px rgba(0,0,0,0.1); text-align: center; }
+    .pin { font-size: 56px; margin-bottom: 16px; }
+    h1 { font-family: "DM Serif Display", serif; font-size: 1.8rem; color: #1C1008; margin-bottom: 8px; }
+    .restaurant { background: #FFF6EF; border-radius: 16px; padding: 16px; margin: 20px 0; text-align: left; }
+    .restaurant-name { font-size: 1.1rem; font-weight: 700; color: #1C1008; }
+    .restaurant-meta { font-size: 0.85rem; color: #6B4226; margin-top: 4px; }
+    .btn { display: block; width: 100%; padding: 16px; border-radius: 16px; font-size: 1rem; font-weight: 600; text-decoration: none; margin-bottom: 12px; cursor: pointer; border: none; }
+    .btn-primary { background: linear-gradient(135deg, #F97316, #EA580C); color: white; }
+    .btn-secondary { background: #F5F5F5; color: #333; }
+    .footnote { font-size: 0.78rem; color: #999; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="pin">📍</div>
+    <h1>Save this restaurant</h1>
+    <p style="color:#6B4226;font-size:0.9rem;">Someone shared this place with you on MapItEatIt</p>
+    <div class="restaurant" id="info">
+      <div class="restaurant-name" id="name">Loading...</div>
+      <div class="restaurant-meta" id="meta"></div>
+    </div>
+    <a class="btn btn-primary" id="openApp" href="#">Open in MapItEatIt</a>
+    <a class="btn btn-secondary" href="https://apps.apple.com/app/id6773663315">Get MapItEatIt on the App Store</a>
+    <p class="footnote">MapItEatIt — Your personal food discovery map</p>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name") || "Restaurant";
+    const cuisine = params.get("cuisine") || "";
+    const address = params.get("address") || "";
+    const lat = params.get("lat") || "";
+    const lng = params.get("lng") || "";
+    const placeId = params.get("placeId") || "";
+    const rating = params.get("rating") || "";
+    document.getElementById("name").textContent = name;
+    const meta = [cuisine, rating ? "⭐ " + rating : "", address].filter(Boolean).join(" · ");
+    document.getElementById("meta").textContent = meta;
+    const deepLink = "mapiteatit://save?name=" + encodeURIComponent(name)
+      + "&cuisine=" + encodeURIComponent(cuisine)
+      + "&address=" + encodeURIComponent(address)
+      + "&lat=" + lat + "&lng=" + lng
+      + "&placeId=" + encodeURIComponent(placeId)
+      + "&rating=" + rating;
+    document.getElementById("openApp").href = deepLink;
+    setTimeout(() => { window.location = deepLink; }, 800);
+  </script>
+</body>
+</html>
